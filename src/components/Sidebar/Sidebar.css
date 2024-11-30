@@ -1,6 +1,6 @@
 .sidebar{
     min-height: 100vh;
-    display:inline-flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #f0f4f9;
@@ -13,7 +13,7 @@
 
 .sidebar .menu{
     display: block;
-    margin-left: 8px;
+    /* margin-left: 8px; */
     cursor: pointer;
 }
 
@@ -21,9 +21,11 @@
     margin-top: 48px;
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     gap: 8px;
     padding: 8px;
-    padding-right: 48px;
+    /* padding-right: 48px; */
+    padding-left: 12px;
     background-color: #e6eaf1;
     border-radius: 48px;
     font-size: 14px;
@@ -38,7 +40,9 @@
 
 .sidebar .recent-title{
     margin-top: 48px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .sidebar .recent-entry{
@@ -65,3 +69,83 @@
     padding-right: 12px;
     cursor: pointer;
 }
+
+/* Animation */
+
+.sidebar {
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .recent {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideIn 0.3s ease forwards;
+  }
+
+  .sidebar .bottom-item {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  .new-chat {
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .new-chat p {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  .recent-title {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  .recent-entry {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideIn 0.3s ease forwards;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .bottom-item.recent-entry {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideIn 0.3s ease forwards;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .bottom-item.recent-entry:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .bottom-item.recent-entry:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .bottom-item.recent-entry:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  .bottom-item.recent-entry p {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
